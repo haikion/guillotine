@@ -1,4 +1,4 @@
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,9 +9,9 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.UUID;
-import de.avdclan.arma2mapconverter.Synchronizable.SubTypes;
 
 import org.apache.log4j.Logger;
+import org.arma.guillotine.Synchronizable.SubTypes;
 
 public class SQM {
 	//TODO: Verify that player groups are not spawned by the headless.

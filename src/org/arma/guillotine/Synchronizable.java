@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 import java.util.ArrayList;
 

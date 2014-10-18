@@ -4,7 +4,7 @@
  * Writes new mission directory in which AI spawning is transfered
  * to Headless Client.
  */
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 import java.io.File;
 import java.io.IOException;

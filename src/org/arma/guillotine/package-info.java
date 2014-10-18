@@ -5,4 +5,4 @@
  * @author kl
  *
  */
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;

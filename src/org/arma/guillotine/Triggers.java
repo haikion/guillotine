@@ -1,11 +1,10 @@
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 import java.util.ArrayList;
 
-public class Vehicle {
+public class Triggers {
 	ArrayList<Item> items = new ArrayList<Item>();
 	private String side = "EMPTY";
-	private String groupName;
 	public ArrayList<Item> getItems() {
 		return items;
 	}
@@ -22,15 +21,5 @@ public class Vehicle {
 	public void setSide(String side) {
 		this.side = side;
 	}
-
-	public String getGroupName() {
-		return groupName;
-	}
-
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
-	
-	
 	
 }

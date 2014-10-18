@@ -1,4 +1,4 @@
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 public class Item extends Synchronizable {
 	private Position position;

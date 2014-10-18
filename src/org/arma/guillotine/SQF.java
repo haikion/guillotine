@@ -1,4 +1,4 @@
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 import java.io.File;
 import java.io.FileWriter;

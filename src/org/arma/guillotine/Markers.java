@@ -1,8 +1,8 @@
-package de.avdclan.arma2mapconverter;
+package org.arma.guillotine;
 
 import java.util.ArrayList;
 
-public class Waypoints {
+public class Markers {
 	ArrayList<Item> items = new ArrayList<Item>();
 	private String side = "EMPTY";
 	public ArrayList<Item> getItems() {
