@@ -22,15 +22,7 @@ Usage
 	3. Add line: "//HEADLESS_SCRIPT" in the init.sqf. This line is replaced by the headless spawn script execution on conversion.
 	4. Open the saved mission.sqm with Arma2MapConverter
 	5. Done
-	
-Updates from the original a2mc
-==============================
-- Creates totally new mission "Mission Name (HEADLESS)"
-- Removes headless spawnable units from the mission.sqm
-- Does not spawn players slots nor logic modules on headless
-- Size of the headless spawn script greatly reduced
-- Simplified Headless spawn script
 
-
-Original Arma2MapConverter(by Lotherk) discussion on ArmAholic forum:
-http://www.armaholic.com/forums.php?m=posts&q=19530
+History	
+=======
+This program was started as a fork from Arma2MapConverter which is made by lotherk.
