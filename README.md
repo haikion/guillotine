@@ -1,5 +1,5 @@
-Arma2MapConverter
-=================
+Guillotine 
+==========
 
 Convert ArmA 2 and 3 missions into headless compatible missions.
 
