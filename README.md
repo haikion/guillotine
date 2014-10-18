@@ -9,10 +9,7 @@ Currently working:
 
 - Converting units, groups and manned vehicles
 - Converting waypoints
-
-Currently not working:
-
-- Converting synchronization. 
+- Converting synchronization 
 
 Usage
 =====
@@ -20,9 +17,9 @@ Usage
 	1. Create new mission
 	2. Create init.sqf script in the mission directory
 	3. Add line: "//HEADLESS_SCRIPT" in the init.sqf. This line is replaced by the headless spawn script execution on conversion.
-	4. Open the saved mission.sqm with Arma2MapConverter
+	4. Open the saved mission.sqm with Guillotine
 	5. Done
 
 History	
 =======
-This program was started as a fork from Arma2MapConverter which is made by lotherk.
+This program was started as a fork of Arma2MapConverter which was developed by lotherk.
