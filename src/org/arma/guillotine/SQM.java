@@ -139,18 +139,6 @@ public class SQM {
 
 			}
 
-		} else if (parent.toString().startsWith("Markers")) {
-			if (parent.getObject() == null) {
-				parent.setObject(new Markers());
-			}
-			TypeClass p = parent.getParent();
-			if (p.toString().startsWith("Item")) {
-
-				((Markers) parent.getObject()).setSide(((Item) p.getObject())
-						.getSide());
-
-			}
-
 		} else if (parent.toString().startsWith("Sensors")) {
 			if (parent.getObject() == null) {
 				parent.setObject(new Triggers());
