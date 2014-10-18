@@ -13,11 +13,8 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 public class SQM {
-	//TODO: Verify that player groups are not spawned by the headless.
-	private TypeClass rootType = new TypeClass("units", null);
-	private TypeClass markers = new TypeClass("markers", null);
+	private TypeClass units = new TypeClass("units", null);
 	private TypeClass triggers = new TypeClass("triggers", null);
-	//private TypeClass vehicles = new TypeClass("vehicles", null);
 	private ArrayList<Item> modules = new ArrayList<Item>();
 	private static Logger logger = Logger.getLogger(SQM.class);
 	private BufferedReader reader;
@@ -30,7 +27,7 @@ public class SQM {
 	}
 	
 	public TypeClass getRootType() {
-		return rootType;
+		return units;
 	}
 
 	public TypeClass getTriggers() {
@@ -64,17 +61,10 @@ public class SQM {
 				if (type != null) {
 					if (type.equals("Groups")) {
 						logger.debug("Processing groups... ");
-						parse(line, rootType);
+						parse(line, units);
 						logger.debug("Groups processed. "
-								+ rootType.getFullCount()
+								+ units.getFullCount()
 								+ " Groups processed.");
-					}
-					if (type.equals("Markers")) {
-						logger.debug("Processing markers... ");
-						parse(line, markers);
-						logger.debug("Markers processed. "
-								+ markers.getFullCount()
-								+ " Markers processed.");
 					}
 					if (type.equals("Sensors")) {
 						logger.debug("Processing triggers... ");
@@ -83,13 +73,6 @@ public class SQM {
 								+ triggers.getFullCount()
 								+ " triggers processed.");
 					}
-					/*if (type.equals("Vehicles")) {
-						logger.debug("Processing empty vehicles... ");
-						parse(line, vehicles);
-						logger.debug("vehicles processed. "
-								+ vehicles.getFullCount()
-								+ " vehicles processed.");
-					}*/
 				}
 
 			}

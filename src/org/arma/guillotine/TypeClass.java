@@ -7,7 +7,9 @@ import org.apache.log4j.Logger;
 public class TypeClass {
 	private static Logger logger = Logger.getLogger(TypeClass.class);
 	private String type;
-	//TODO: Use base class instead of Object
+	//TODO: This is being casted all the time -> Bad programming.
+	//This can be either Vehicle, Markers, Triggers or Item.
+	//Figure out how to replace
 	private Object object;
 	private ArrayList<TypeClass> childs = new ArrayList<TypeClass>();
 	private TypeClass parent;
