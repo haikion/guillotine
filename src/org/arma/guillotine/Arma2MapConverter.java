@@ -1,3 +1,7 @@
+/**
+ * Main class for Arma2MapConverter binds everything together.
+ */
+
 package org.arma.guillotine;
 
 import java.io.File;
@@ -14,8 +18,8 @@ public class Arma2MapConverter {
 	final static String VERSION = "0.7.0-beta";
 	final static String SCRIPT_NAME = "spawnHeadlessObjects.sqf";
 	static File inputFile = new File("");
-	
 	private static Logger logger = Logger.getLogger(Arma2MapConverter.class);
+
 	public Arma2MapConverter() {
 		logger.debug("Initializing Arma2MapConverter v" + VERSION + " by [AvD] Rush & Hoxzer");
 	}
@@ -57,7 +61,7 @@ public class Arma2MapConverter {
 	    logger.debug("Selected SQM Mission: " + inputFile.getAbsolutePath());
 		Arma2MapConverter a2mc = new Arma2MapConverter();
 		SQM sqm = a2mc.openSQM(inputFile);
-		SQF sqf = sqm.toSQF();
+		SQF sqf = new SQF(sqm);
 
 		//Write edited mission.
 		MissionTrimmer missionTrimmer = sqm.getMissionTrimmer();

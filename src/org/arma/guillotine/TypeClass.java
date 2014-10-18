@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 public class TypeClass {
 	private static Logger logger = Logger.getLogger(TypeClass.class);
 	private String type;
+	//TODO: Use base class instead of Object
 	private Object object;
 	private ArrayList<TypeClass> childs = new ArrayList<TypeClass>();
 	private TypeClass parent;
@@ -22,6 +23,7 @@ public class TypeClass {
 	public void setType(String type) {
 		this.type = type;
 	}
+	//TODO: rename this function
 	public Object getObject() {
 		return object;
 	}
