@@ -57,15 +57,15 @@ public class SQF {
 		code += "\n/*****************\n" + " * UNIT CREATION *\n"
 				+ " *****************/\n";
 		code += generateSQF(rootType);
-		code += "\n/********************\n" + " * TRIGGER SYNCHRONIZATION *\n"
-				+ " ********************/\n";
+		code += "\n/*****************************\n" + " * TRIGGER SYNCHRONIZATION *\n"
+				+ "*****************************/\n";
 		code += generateSQF(triggers);
-		code += "\n/********************\n" + " * MODULE SYNCHRONIZATION *\n"
-				+ " ********************/\n";
+		code += "\n/*****************************\n" + " * MODULE SYNCHRONIZATION *\n"
+				+ "*****************************/\n";
 		code += generateModuleSyncSQF(sqm.getModules());
-		code += "\n/**************************\n"
+		code += "\n/****************************\n"
 				+  "* BROADCAST PUBLIC NAMES *\n"
-				+  "**************************/\n";
+				+  "****************************/\n";
 		code += generateBroadcastSQF();
 		code += "\n// return all created units in an array\n"
 				+ "[_createdUnits]\n";
