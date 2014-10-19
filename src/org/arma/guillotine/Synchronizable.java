@@ -29,7 +29,7 @@ public class Synchronizable  {
 	}
 	
 	public Synchronizable() {
-		logger.debug("New Sync!");
+		logger.debug("New Synchronizable object created");
 		synchronizables.add(this);
 	}
 	

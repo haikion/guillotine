@@ -21,7 +21,7 @@ public class Arma2MapConverter {
 	private static Logger logger = Logger.getLogger(Arma2MapConverter.class);
 
 	public Arma2MapConverter() {
-		logger.debug("Initializing Arma2MapConverter v" + VERSION + " by [AvD] Rush & Hoxzer");
+		logger.debug("Initializing Guillotine v" + VERSION + " by Hoxzer");
 	}
 	
 	public SQM openSQM(File mission) {
@@ -93,7 +93,7 @@ public class Arma2MapConverter {
 	
 	private static File openDialog() {
 		JFileChooser fc = new JFileChooser();
-		fc.setDialogTitle("Arma2MapConverter v" + VERSION + ": load mission.sqm");
+		fc.setDialogTitle("Guillotine v" + VERSION + ": load mission.sqm");
 	    fc.setFileFilter( new FileFilter()
 	    {
 	      @Override public boolean accept( File f )

@@ -21,7 +21,7 @@ public class SQF {
 	private int groupCountEast;
 	private int groupCountGuer;
 	private int groupCountCiv;
-	private ArrayList<Item> modules;
+	private ArrayList<Item> modules = new ArrayList<Item>();
 	private static Logger logger = Logger.getLogger(SQF.class);
 	
 	public SQF(SQM sqm) {
@@ -276,11 +276,6 @@ public class SQF {
 						code += "\t" + fixInitCode(item.getInit()).replace("this",item.getName()) + "\n";
 					}
 					code +=  "\t" + item.getSyncSQF() + "\n";
-//					if (item.getText() != null
-//							&& !item.getSide().equals("EMPTY")) {
-//						code += "\tsetVehicleVarName \"" + item.getText().replace("\"", "") + "\";\n";
-//					}
-					
 					code += "\t_createdUnits = _createdUnits + ["
 							+ item.getName() + "];\n";
 					code += "};\n// end of " + item.getName() + "\n";
