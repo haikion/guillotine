@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 public class SQM {
-	private TypeClass units = new TypeClass("units", null);
-	private TypeClass triggers = new TypeClass("triggers", null);
+	private SQMClass units = new SQMClass("units", null);
+	private SQMClass triggers = new SQMClass("triggers", null);
 	private ArrayList<Item> modules = new ArrayList<Item>();
 	private static Logger logger = Logger.getLogger(SQM.class);
 	private BufferedReader reader;
@@ -26,11 +26,11 @@ public class SQM {
 		return publicNames;
 	}
 	
-	public TypeClass getRootType() {
+	public SQMClass getRootType() {
 		return units;
 	}
 
-	public TypeClass getTriggers() {
+	public SQMClass getTriggers() {
 		return triggers;
 	}
 
@@ -97,12 +97,12 @@ public class SQM {
 	 * @param input
 	 * @throws IOException
 	 */
-	private void parse(String input, TypeClass parent) throws IOException {
+	private void parse(String input, SQMClass parent) throws IOException {
 		String line = input.replaceAll("^\\s+", "");
 		if (line.startsWith("class")) {
 
 			String[] spl = line.split(" ", 2);
-			TypeClass typeClass = new TypeClass(spl[1], parent);
+			SQMClass typeClass = new SQMClass(spl[1], parent);
 			parent.getChilds().add(typeClass);
 
 			while (!(line = reader.readLine().replaceAll("^\\s+", ""))
@@ -118,7 +118,7 @@ public class SQM {
 			if (parent.getObject() == null) {
 				parent.setObject(new Vehicle());
 			}
-			TypeClass p = parent.getParent();
+			SQMClass p = parent.getParent();
 			if (p.toString().startsWith("Item")) {
 
 				((Vehicle) parent.getObject()).setSide(((Item) p.getObject())
@@ -131,7 +131,7 @@ public class SQM {
 			if (parent.getObject() == null) {
 				parent.setObject(waypoints);
 			}
-			TypeClass p = parent.getParent();
+			SQMClass p = parent.getParent();
 			if (p.toString().startsWith("Item")) {
 
 				((Waypoints) parent.getObject()).setSide(((Item) p.getObject())
@@ -143,7 +143,7 @@ public class SQM {
 			if (parent.getObject() == null) {
 				parent.setObject(new Triggers());
 			}
-			TypeClass p = parent.getParent();
+			SQMClass p = parent.getParent();
 			if (p.toString().startsWith("Item")) {
 
 				((Triggers) parent.getObject()).setSide(((Item) p.getObject())

@@ -28,8 +28,8 @@ public class SQF {
 	
 	public SQF(SQM sqm) {
 		File source = sqm.getSource();
-		TypeClass rootType = sqm.getRootType();
-		TypeClass triggers = sqm.getTriggers();
+		SQMClass rootType = sqm.getRootType();
+		SQMClass triggers = sqm.getTriggers();
 		missionTrimmer = sqm.getMissionTrimmer();
 		publicNames = sqm.getPublicNames();
 		
@@ -110,13 +110,13 @@ public class SQF {
 
 	}
 	
-	private String generateSQF(TypeClass typeClass) {
+	private String generateSQF(SQMClass typeClass) {
 		String code = "";
 
-		for (TypeClass tc : typeClass.getChilds()) {
+		for (SQMClass tc : typeClass.getChilds()) {
 
 			if (tc.equals("Markers")) {
-				for (TypeClass items : tc.getChilds()) {
+				for (SQMClass items : tc.getChilds()) {
 					Item item = (Item) items.getObject();
 					if (item.getName() == null) {
 						// generate unique unit name
@@ -151,7 +151,7 @@ public class SQF {
 				}
 			}
 			if (tc.equals("Sensors")) {
-				for (TypeClass items : tc.getChilds()) {
+				for (SQMClass items : tc.getChilds()) {
 
 					Item item = (Item) items.getObject();
 					item.generatePublicName();
@@ -163,7 +163,7 @@ public class SQF {
 			if (tc.equals("Waypoints")) {
 				int index = 0;
 				String groupName = null;
-				for (TypeClass tClass : tc.getParent().getChilds()) {
+				for (SQMClass tClass : tc.getParent().getChilds()) {
 					if (tClass.getType().equals("Vehicles")) {
 						groupName = ((Vehicle) tClass.getObject())
 								.getGroupName();
@@ -172,7 +172,7 @@ public class SQF {
 				logger.debug("Adding waypoints for group " + groupName);
 				code += "\n/**\n" + " * Waypoints for group " + groupName
 						+ "\n" + " */\n";
-				for (TypeClass items : tc.getChilds()) {
+				for (SQMClass items : tc.getChilds()) {
 					++index;
 					Item item = (Item) items.getObject();
 					item.setSubtype(SubTypes.WAYPOINT);
@@ -227,7 +227,7 @@ public class SQF {
 				code += "private[\""+group+"\"];\n";
 				code += group + " = createGroup _" + side + "HQ;\n";
 
-				for (TypeClass items : tc.getChilds()) {
+				for (SQMClass items : tc.getChilds()) {
 
 					Item item = (Item) items.getObject();
 					//Do not include player slots or modules
