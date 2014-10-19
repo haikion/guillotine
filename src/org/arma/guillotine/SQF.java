@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.UUID;
-
 import org.apache.log4j.Logger;
 import org.arma.guillotine.Synchronizable.SubTypes;
 
@@ -114,42 +112,6 @@ public class SQF {
 		String code = "";
 
 		for (SQMClass tc : typeClass.getChilds()) {
-
-			if (tc.equals("Markers")) {
-				for (SQMClass items : tc.getChilds()) {
-					Item item = (Item) items.getObject();
-					if (item.getName() == null) {
-						// generate unique unit name
-						item.setName("marker_"
-								+ UUID.randomUUID().toString()
-										.replaceAll("-", ""));
-					}
-					code += "_marker = createMarker[" + item.getName() + ", ["
-							+ item.getPosition().getX() + ", "
-							+ item.getPosition().getY() + "]];\n"
-							+ "_marker setMarkerShape " + item.getType()
-							+ ";\n" + "_marker setMarkerType "
-							+ item.getMarkerType() + ";\n"
-							+ "_marker setMarkerSize [" + item.getA() + ", "
-							+ item.getB() + "];\n";
-
-					if (item.getText() != null) {
-						code += "_marker setMarkerText " + item.getText()
-								+ ";\n";
-					}
-					if (item.getColorName() != null) {
-						code += "_marker setMarkerColor " + item.getColorName()
-								+ ";\n";
-					}
-					if (item.getFillName() != null) {
-						code += "_marker setMarkerBrush " + item.getFillName()
-								+ ";\n";
-					}
-					code += "_createdMarkers = _createdMarkers + [_marker];\n";
-					code += "\n";
-
-				}
-			}
 			if (tc.equals("Sensors")) {
 				for (SQMClass items : tc.getChilds()) {
 
