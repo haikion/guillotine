@@ -14,13 +14,13 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 
-public class Arma2MapConverter {
+public class Guillotine {
 	final static String VERSION = "0.7.0-beta";
 	final static String SCRIPT_NAME = "spawnHeadlessObjects.sqf";
 	static File inputFile = new File("");
-	private static Logger logger = Logger.getLogger(Arma2MapConverter.class);
+	private static Logger logger = Logger.getLogger(Guillotine.class);
 
-	public Arma2MapConverter() {
+	public Guillotine() {
 		logger.debug("Initializing Guillotine v" + VERSION + " by Hoxzer");
 	}
 	
@@ -59,7 +59,7 @@ public class Arma2MapConverter {
 	    	inputFile = openDialog();
 	    }
 	    logger.debug("Selected SQM Mission: " + inputFile.getAbsolutePath());
-		Arma2MapConverter a2mc = new Arma2MapConverter();
+		Guillotine a2mc = new Guillotine();
 		SQM sqm = a2mc.openSQM(inputFile);
 		SQF sqf = new SQF(sqm);
 

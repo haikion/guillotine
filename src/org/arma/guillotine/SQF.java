@@ -35,7 +35,7 @@ public class SQF {
 		String code = ""
 				+ "/**\n"
 				+ " * Converted with Arma2MapConverter v"
-				+ Arma2MapConverter.VERSION
+				+ Guillotine.VERSION
 				+ "\n"
 				+ " *\n"
 				+ " * Source: "
