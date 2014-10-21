@@ -1,5 +1,5 @@
 /**
- * Main class for Arma2MapConverter binds everything together.
+ * Main class for Guillotine binds everything together.
  */
 
 package org.arma.guillotine;

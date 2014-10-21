@@ -43,6 +43,10 @@ public class MissionTrimmer {
 		//Get current mission name parameter
 		Parameter nameParameter = parser_.getMissionRoot().getChildByName("Mission")
 				.getChildByName("Intel").getParameter("briefingName");
+		if (nameParameter == null)
+		{
+			return;
+		}
 		newMissionName_ = nameParameter.getValue();
 		//Strip quotation marks
 		newMissionName_ = newMissionName_.substring(1, newMissionName_.length()-1);
@@ -70,8 +74,14 @@ public class MissionTrimmer {
 		}
 		String init = FileUtils.readFileToString(initFile);
 		if (!init.contains(SCRIPT_MARKER)) {
-			return "The headless spawn script location is not marked."+
+			return "Error: The headless spawn script location is not marked."+
 					" Please add line: \""+SCRIPT_MARKER+"\" somewhere in your init.sqf.";
+		}
+		Parameter nameParameter = parser_.getMissionRoot().getChildByName("Mission")
+				.getChildByName("Intel").getParameter("briefingName");
+		if (nameParameter == null) 
+		{
+			return "Error: Mission has no name";
 		}
 		if (newMissionName_.length() > MAX_MISSION_NAME_LENGHT)
 		{
