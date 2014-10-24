@@ -193,8 +193,10 @@ public class SQM {
 				((Item) parent.getObject()).setInit(tmp[1]);
 			} else if (line.startsWith("name=")) {
 				String[] tmp = line.split("=", 2);
-				((Item) parent.getObject()).setName(tmp[1]
-						.replaceAll("\\;", ""));
+				String name = tmp[1];
+				name = name.replaceAll("\"", "");
+				name = name.replaceAll("\\;", "");
+				((Item) parent.getObject()).setName(name);
 			} else if (line.startsWith("markerType=")) {
 				String[] tmp = line.split("=", 2);
 				((Item) parent.getObject()).setMarkerType(tmp[1].replaceAll(
